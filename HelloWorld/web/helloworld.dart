@@ -2,9 +2,13 @@ import 'dart:html';
 
 ButtonElement button;
 String inputName;
+String inputVorname;
 
 void main() {
+  
   querySelector('#inputName').onInput.listen(refreshStringName);
+  querySelector('#inputVorname').onInput.listen(refreshStringVorname);
+    
   
   button = querySelector('#buttonSpeichern');
   button.onClick.listen(buttonClickHandler);
@@ -19,10 +23,15 @@ void setName(String newName){
 
 void refreshStringName(Event e){
   inputName = (e.target as InputElement).value;
-  
+}
+void refreshStringVorname(Event e){
+  inputVorname = (e.target as InputElement).value;
 }
 
 void buttonClickHandler(Event e){
-  setName(inputName);
+  
+  var sCon = inputName + ' ' + inputVorname;
+  
+  setName(sCon);
 }
 
