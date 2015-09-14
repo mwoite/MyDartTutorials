@@ -2,28 +2,26 @@ import 'dart:html';
 
 ButtonElement button;
 String inputName;
-<<<<<<< HEAD
 String inputVorname;
 
-=======
 var anschrift = new Anschrift();
->>>>>>> Testing-with-calsses
+
 void main() {
-  
+
   querySelector('#inputName').onInput.listen(refreshStringName);
   querySelector('#inputVorname').onInput.listen(refreshStringVorname);
-    
-  
+
+
   button = querySelector('#buttonSpeichern')
   ..text = 'Click to Confirm';
-  
+
   button.onClick.listen(buttonClickHandler);
-  
- 
+
+
   anschrift.hnr = 2;
   anschrift.ort = 'Testort';
   anschrift.str = 'Straße';
-  
+
 }
 
 
@@ -43,15 +41,13 @@ void refreshStringVorname(Event e){
 }
 
 void buttonClickHandler(Event e){
-<<<<<<< HEAD
-  
+
   var sCon = inputName + ' ' + inputVorname;
-  
+
   setName(sCon);
-=======
-  setName(inputName);
+
   setAnschrift(anschrift.getCompleteAnschrift());
->>>>>>> Testing-with-calsses
+
 }
 
 class Anschrift {
@@ -59,9 +55,9 @@ class Anschrift {
   var plz;
   var str;
   var hnr;
-  
+
   getCompleteAnschrift(){
-    
+
     return ort; //+ ' ' + plz + ', ' + str + ' ' + hnr;
   }
 }
